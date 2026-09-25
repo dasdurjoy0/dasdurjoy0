@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Durjoy Das — Developer & Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+
+<nav>
+  <span class="nav-logo">durjoy@das:~$</span>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about" onclick="closeNav()">About</a></li>
+    <li><a href="#skills" onclick="closeNav()">Skills</a></li>
+    <li><a href="#projects" onclick="closeNav()">Projects</a></li>
+    <li><a href="#experience" onclick="closeNav()">Experience</a></li>
+    <li><a href="#resume" onclick="closeNav()">Resume</a></li>
+    <li><a href="#contact" onclick="closeNav()">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" onclick="toggleNav()" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Available for work</div>
+    <h1 class="hero-name">Durjoy Das</h1>
+    <p class="hero-role">Rising Developer & Designer</p>
+    <p class="hero-bio">I build clean, fast, and thoughtful digital products — from system architecture to the pixel layer. Six years turning complex problems into interfaces people actually enjoy using.</p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn-primary">See my work</a>
+      <a href="#contact" class="btn-ghost">Get in touch</a>
+    </div>
+  </div>
+
+  <div class="terminal">
+    <div class="terminal-bar">
+      <span class="dot dot-r"></span>
+      <span class="dot dot-y"></span>
+      <span class="dot dot-g"></span>
+      <span class="terminal-title">terminal — zsh</span>
+    </div>
+    <div class="terminal-body" id="termBody">
+      <span class="t-prompt">~/portfolio </span><span class="t-cmd">$ whoami</span><br>
+      <span id="typeTarget"></span><span id="cursor"></span>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="reveal">
+    <div class="section-label">About me</div>
+    <h2 class="section-title">Built on curiosity,<br>shipped with care.</h2>
+  </div>
+  <div class="about-grid reveal">
+    <div class="about-body">
+      <p>I'm <strong>Durjoy Das</strong>, a  rising full-stack developer and designer with six years of experience turning ambiguous problems into clean, fast, and accessible digital products. I started tinkering with HTML at age 16, got my first paid gig at 19, and haven't stopped since.</p>
+      <p>My background spans <strong>product engineering, systems design, and UI/UX</strong> — which means I can own a feature end-to-end, from database schema to polished interface. I've worked as an independent contractor.</p>
+      <p><strong>Career goal:</strong> To join a team building something technically ambitious and human-centred — ideally as a senior IC with a path toward staff engineering. I care about code quality, documentation, and actually finishing things.</p>
+      <p>Outside of work: diving in tech, hiking trails, competitive chess (I lose a lot), and brewing unnecessarily complicated pour-over coffee.</p>
+      <div class="about-interests">
+        <span class="interest-pill">☕ Pour-over coffee</span>
+        <span class="interest-pill">♟ Chess</span>
+        <span class="interest-pill">🥾 Hiking</span>
+        <span class="interest-pill">📖 Technical reading</span>
+      </div>
+    </div>
+    <div class="about-stats">
+      <div class="stat-card">
+        <span class="stat-num">6+</span>
+        <span class="stat-label">Years of experience</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num">5</span>
+        <span class="stat-label">Projects delivered</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num">0</span>
+        <span class="stat-label">App users (for now)</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num">0×</span>
+        <span class="stat-label">Startups from zero</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="reveal">
+    <div class="section-label">Skills</div>
+    <h2 class="section-title">What I work with.</h2>
+    <p class="section-sub">Six years across the full stack — languages, infrastructure, design, and the hardware layer. I believe in being genuinely useful at every level.</p>
+  </div>
+  <div class="skills-categories">
+
+    <div class="skill-category reveal">
+      <div class="skill-cat-title">// Programming Languages</div>
+      <div class="skills-grid">
+        <div class="skill-chip"><span class="dot-skill"></span>C / C++</div>
+        <div class="skill-chip"><span class="dot-skill"></span>JavaScript (ES2022+)</div>
+        <div class="skill-chip"><span class="dot-skill"></span>Python</div>
+        <div class="skill-chip"><span class="dot-skill"></span>Java</div>
+        <div class="skill-chip"><span class="dot-skill"></span>SQL</div>
+        <div class="skill-chip"><span class="dot-skill"></span>HTML / CSS</div>
+      </div>
+    </div>
+
+    <div class="skill-category reveal">
+      <div class="skill-cat-title">// Frameworks & Tools</div>
+      <div class="skills-grid">
+        <div class="skill-chip"><span class="dot-skill"></span><span style="color: #4e4e4e;">React / Next.js</span></div>
+        <div class="skill-chip"><span class="dot-skill"></span><span style="color: #4e4e4e;">FastAPI</span></div>
+        <div class="skill-chip"><span class="dot-skill"></span><span style="color: #4e4e4e;">Node.js / Express</span></div>
+        <div class="skill-chip"><span class="dot-skill"></span>MySQL</div>
+        <div class="skill-chip"><span class="dot-skill"></span>Git / GitHub Actions</div>
+      </div>
+    </div>
+
+    <div class="skill-category reveal">
+      <div class="skill-cat-title">// Operating Systems</div>
+      <div class="skills-grid">
+        <div class="skill-chip"><span class="dot-skill"></span>Ubuntu</div>
+        <div class="skill-chip"><span class="dot-skill"></span>Windows (10/11, Server)</div>
+        <div class="skill-chip"><span class="dot-skill"></span>Kali Linux</div>
+      </div>
+    </div>
+
+    <div class="skill-category reveal">
+      <div class="skill-cat-title">// Networking (Loading)</div>
+      <div class="skills-grid">
+        <div class="skill-chip"><span class="dot-skill"></span><span style="color: #4e4e4e;">TCP/IP, DNS, HTTP/S</span></div>
+        <div class="skill-chip"><span class="dot-skill"></span><span style="color: #4e4e4e;">Nginx / Reverse Proxy</span></div>
+        <div class="skill-chip"><span class="dot-skill"></span><span style="color: #4e4e4e;">VPN / WireGuard</span></div>
+        <div class="skill-chip"><span class="dot-skill"></span><span style="color: #4e4e4e;">Firewall & Iptables</span></div>
+        <div class="skill-chip"><span class="dot-skill"></span><span style="color: #4e4e4e;">Load Balancing</span></div>
+        <div class="skill-chip"><span class="dot-skill"></span><span style="color: #4e4e4e;">SSH & Remote Admin</span></div>
+      </div>
+    </div>
+
+    <div class="skill-category reveal">
+      <div class="skill-cat-title">// Hardware & Troubleshooting</div>
+      <div class="skills-grid">
+        <div class="skill-chip"><span class="dot-skill"></span>PC Building & Repair</div>
+        <div class="skill-chip"><span class="dot-skill"></span>Component Diagnostics</div>
+        <div class="skill-chip"><span class="dot-skill"></span>Arduino</div>
+        <div class="skill-chip"><span class="dot-skill"></span>Peripheral Configuration</div>
+        <div class="skill-chip"><span class="dot-skill"></span>Data Recovery</div>
+        <div class="skill-chip"><span class="dot-skill"></span>BIOS / Firmware</div>
+      </div>
+    </div>
+
+    <div class="skill-category reveal">
+      <div class="skill-cat-title">// Design</div>
+      <div class="skills-grid">
+        <div class="skill-chip"><span class="dot-skill"></span>Figma / Canva</div>
+        <div class="skill-chip"><span class="dot-skill"></span>UI / UX Design</div>
+        <div class="skill-chip"><span class="dot-skill"></span><span style="color: #4e4e4e;">Design Systems</span></div>
+        <div class="skill-chip"><span class="dot-skill"></span><span style="color: #4e4e4e;">Accessibility (WCAG)</span></div>
+        <div class="skill-chip"><span class="dot-skill"></span>Motion & Animation</div>
+        <div class="skill-chip"><span class="dot-skill"></span>Adobe Illustrator</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="reveal">
+    <div class="section-label">Selected work</div>
+    <h2 class="section-title">Things I've built.</h2>
+    <p class="section-sub">A mix of product work, side projects, and open-source contributions. Each one taught me something I couldn't have learned otherwise.</p>
+  </div>
+
+  <div class="projects-grid">
+
+    <!-- Featured project -->
+    <div class="project-card featured reveal">
+      <div class="project-info">
+        <div class="project-tags">
+          <span class="tag">Next.js</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Stripe</span>
+          <span class="tag">Redis</span>
+        </div>
+        <div class="project-title">Meridian — SaaS Analytics</div>
+        <p class="project-desc">A multi-tenant analytics platform handling 50M+ events per day. Built real-time dashboards, a custom query engine, and a billing system that actually makes sense. Acquired by LoremCo in 2023.</p>
+        <div class="project-meta">
+          <p class="project-contribution"><strong>My contribution:</strong> Led a 3-person team as the sole backend engineer. Designed the event ingestion pipeline, built the multi-tenant data model, integrated Stripe billing, and shipped the entire dashboard UI in Next.js. Also handled DevOps — zero-downtime deploys on AWS ECS.</p>
+          <div class="project-actions">
+            <a href="#" class="proj-btn live">⬡ Live Demo</a>
+            <a href="#" class="proj-btn">⌥ GitHub</a>
+            <a href="#" class="proj-btn">↗ Case Study</a>
+          </div>
+        </div>
+      </div>
+      <div class="project-preview" aria-label="Project screenshot placeholder">
+        <div class="preview-grid">
+          <div class="preview-block tall accent"></div>
+          <div class="preview-block"></div>
+          <div class="preview-block"></div>
+          <div class="preview-block"></div>
+          <div class="preview-block accent" style="opacity:0.5;"></div>
+          <div class="preview-block tall"></div>
+          <div class="preview-block"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Docflow -->
+    <div class="project-card reveal">
+      <div class="project-tags">
+        <span class="tag">Python</span>
+        <span class="tag">FastAPI</span>
+        <span class="tag">OpenAI</span>
+        <span class="tag">Docker</span>
+      </div>
+      <div class="project-title">Docflow</div>
+      <p class="project-desc">Document parsing and extraction API used by 300+ developers. Processes PDFs, contracts, and invoices with structured JSON output — no hallucinations.</p>
+      <div class="project-meta">
+        <p class="project-contribution"><strong>My contribution:</strong> Solo project. Designed the API schema, built the extraction pipeline using LLM function calling, wrote the developer docs, and managed the open-source community.</p>
+        <div class="project-actions">
+          <a href="#" class="proj-btn live">⬡ Live Demo</a>
+          <a href="#" class="proj-btn">⌥ GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trackr -->
+    <div class="project-card reveal">
+      <div class="project-tags">
+        <span class="tag">React Native</span>
+        <span class="tag">Expo</span>
+        <span class="tag">SQLite</span>
+      </div>
+      <div class="project-title">Trackr</div>
+      <p class="project-desc">Habit tracking app with 8k active users. Focused on reducing friction: one-tap logging, smart reminders, and zero subscription upsell.</p>
+      <div class="project-meta">
+        <p class="project-contribution"><strong>My contribution:</strong> Sole developer and designer. Built in 6 weeks as a side project. Shipped to both iOS and Android via Expo. Analytics, onboarding, and push notifications all self-implemented.</p>
+        <div class="project-actions">
+          <a href="#" class="proj-btn live">⬡ App Store</a>
+          <a href="#" class="proj-btn">⌥ GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- NetWatch -->
+    <div class="project-card reveal">
+      <div class="project-tags">
+        <span class="tag">Go</span>
+        <span class="tag">Raspberry Pi</span>
+        <span class="tag">SQLite</span>
+      </div>
+      <div class="project-title">NetWatch</div>
+      <p class="project-desc">A self-hosted home network monitor that runs on a Raspberry Pi. Tracks uptime, latency, connected devices, and sends alerts via Telegram.</p>
+      <div class="project-meta">
+        <p class="project-contribution"><strong>My contribution:</strong> Full build — hardware setup, Go daemon, web dashboard, and Telegram bot integration. Runs 24/7 on a Pi Zero 2W in my flat.</p>
+        <div class="project-actions">
+          <a href="#" class="proj-btn">⌥ GitHub</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="reveal">
+    <div class="section-label">Work history</div>
+    <h2 class="section-title">Where I've been.</h2>
+    <p class="section-sub">Work, teaching, community, and freelance — the full picture of how I've grown.</p>
+  </div>
+
+  <div class="timeline">
+
+    <div class="timeline-item reveal">
+      <div class="timeline-date">2022 — now</div>
+      <div class="timeline-line"></div>
+      <div class="timeline-content">
+        <span class="exp-badge work">Full-time</span>
+        <div class="timeline-role">Senior Software Engineer</div>
+        <div class="timeline-company">Acme Corp — Remote</div>
+        <ul class="timeline-bullets">
+          <li>Lead the platform team of 4 engineers; own the core API layer and data pipeline architecture.</li>
+          <li>Reduced p99 API latency by 60% through query optimization and Redis caching layer.</li>
+          <li>Introduced a service mesh (Linkerd) that cut inter-service error rate from 2.1% to 0.08%.</li>
+          <li>Mentoring two junior engineers — running weekly code reviews and pair sessions.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-date">2021 — 2023</div>
+      <div class="timeline-line"></div>
+      <div class="timeline-content">
+        <span class="exp-badge freelance">Freelance</span>
+        <div class="timeline-role">Independent Contractor</div>
+        <div class="timeline-company">Various clients — Remote</div>
+        <ul class="timeline-bullets">
+          <li>Delivered 12 freelance contracts across fintech, e-commerce, and SaaS — solo and as a subcontractor.</li>
+          <li>Built a payment reconciliation dashboard for a fintech client that saved 14 hrs/week of manual work.</li>
+          <li>Ran performance audits for 3 e-commerce stores, improving Core Web Vitals scores by avg. 38 points.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-date">2020 — 2022</div>
+      <div class="timeline-line"></div>
+      <div class="timeline-content">
+        <span class="exp-badge work">Full-time</span>
+        <div class="timeline-role">Full-Stack Engineer</div>
+        <div class="timeline-company">Startupco — San Francisco</div>
+        <ul class="timeline-bullets">
+          <li>Third engineer hired. Built the core product from zero — frontend, backend, and cloud infrastructure.</li>
+          <li>Scaled from 0 to 40k users in 18 months without a dedicated DevOps team.</li>
+          <li>Architected the multi-region PostgreSQL setup that now handles 4M queries/day.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-date">2019 — 2021</div>
+      <div class="timeline-line"></div>
+      <div class="timeline-content">
+        <span class="exp-badge teach">Teaching</span>
+        <div class="timeline-role">CS Teaching Assistant & Tutor</div>
+        <div class="timeline-company">Lorem University — Part-time</div>
+        <ul class="timeline-bullets">
+          <li>TA for Intro to Algorithms and Web Development courses (200+ students combined).</li>
+          <li>Ran weekly lab sessions, graded assignments, and held office hours for struggling students.</li>
+          <li>Developed supplementary Python exercises adopted by the department as permanent course material.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-date">2018 — 2020</div>
+      <div class="timeline-line"></div>
+      <div class="timeline-content">
+        <span class="exp-badge club">Computer Club</span>
+        <div class="timeline-role">President — Coding & Hardware Club</div>
+        <div class="timeline-company">Lorem University</div>
+        <ul class="timeline-bullets">
+          <li>Founded and grew the club from 8 to 60+ active members across two academic years.</li>
+          <li>Organised weekly workshops on topics ranging from Linux sysadmin to Raspberry Pi projects and competitive programming.</li>
+          <li>Led the university team in two regional hackathons — placed 2nd in 2019.</li>
+          <li>Managed the club's server room: network configuration, hardware maintenance, and OS imaging for lab machines.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-date">2018 — 2020</div>
+      <div class="timeline-line"></div>
+      <div class="timeline-content">
+        <span class="exp-badge work">Full-time</span>
+        <div class="timeline-role">Frontend Developer</div>
+        <div class="timeline-company">Agency Lorem — New York</div>
+        <ul class="timeline-bullets">
+          <li>Delivered 20+ client projects across fintech, healthcare, and e-commerce verticals.</li>
+          <li>Specialised in performance budgets and accessibility audits — brought 6 sites to WCAG AA compliance.</li>
+          <li>Introduced the team's first component library, cutting per-project UI build time by ~40%.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- RESUME -->
+<section id="resume">
+  <div class="reveal">
+    <div class="section-label">Resume</div>
+    <h2 class="section-title">Qualifications at a glance.</h2>
+    <p class="section-sub">Download the full PDF or read the summary here. Last updated September 2026.</p>
+  </div>
+  <div class="resume-block">
+
+    <div class="resume-download-card reveal">
+      <div class="resume-file-icon">PDF</div>
+      <div class="resume-card-title">John_Doe_Resume_2026.pdf</div>
+      <p class="resume-card-sub">Two-page resume covering work history, education, skills, and notable projects. ATS-friendly format — ready to send as-is.</p>
+      <a href="#" class="btn-primary" style="align-self:flex-start;" download>⬇ Download PDF</a>
+      <p style="font-size:0.75rem; color:var(--text-dim); font-family:'JetBrains Mono',monospace;">Last updated: Sep 2026 · PDF · ~180 KB</p>
+    </div>
+
+    <div class="resume-qualifications reveal">
+      <div class="qual-item">
+        <div class="qual-icon">🎓</div>
+        <div class="qual-text">
+          <div class="qual-title">B.Sc. Computer Science</div>
+          <div class="qual-sub">Lorem University · 2018 · First Class Honours</div>
+        </div>
+      </div>
+      <div class="qual-item">
+        <div class="qual-icon">☁️</div>
+        <div class="qual-text">
+          <div class="qual-title">AWS Certified Solutions Architect</div>
+          <div class="qual-sub">Amazon Web Services · 2021 · Associate level</div>
+        </div>
+      </div>
+      <div class="qual-item">
+        <div class="qual-icon">🔐</div>
+        <div class="qual-text">
+          <div class="qual-title">CompTIA Security+</div>
+          <div class="qual-sub">CompTIA · 2022 · Valid through 2025</div>
+        </div>
+      </div>
+      <div class="qual-item">
+        <div class="qual-icon">🐳</div>
+        <div class="qual-text">
+          <div class="qual-title">Certified Kubernetes Administrator (CKA)</div>
+          <div class="qual-sub">CNCF · 2023</div>
+        </div>
+      </div>
+      <div class="qual-item">
+        <div class="qual-icon">🌐</div>
+        <div class="qual-text">
+          <div class="qual-title">Languages</div>
+          <div class="qual-sub">English (fluent) · Spanish (conversational) · French (basic)</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="reveal">
+    <div class="section-label">Contact</div>
+    <h2 class="section-title">Let's work together.</h2>
+  </div>
+  <div class="contact-block">
+    <div class="contact-info reveal">
+      <div class="contact-headline">
+        Got a project?<br>
+        Let's <span>talk.</span>
+      </div>
+      <p style="font-size:0.9rem; color:var(--text-dim); line-height:1.7;">
+        I'm currently open to senior IC and staff-level roles, as well as freelance contracts. Response time is usually within 24 hours on weekdays. If you have something interesting, I want to hear it.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:durjoyd24@proton.me" class="contact-link">
+          <span class="icon">
+            <img src="../assets/email.png" alt="@">
+          </span>
+          durjoyd24@proton.me
+        </a>
+        <a href="https://linkedin.com/in/durjoyd" target="_blank" class="contact-link">
+          <span class="icon">
+            <img src="../assets/linkedin.png" alt="in">
+          </span>
+          linkedin.com/in/durjoyd
+        </a>
+        <a href="https://github.com/dasdurjoy0" target="_blank" class="contact-link">
+          <span class="icon">
+            <img src="../assets/github.png" alt="🖐">
+          </span>
+          github.com/dasdurjoy0
+        </a>
+        <a href="https://twitter.com/johndoe" target="_blank" class="contact-link">
+          <span class="icon" style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;">𝕏</span>
+          @johndoe
+        </a>
+      </div>
+      <p style="font-size:0.78rem; color:var(--text-dim); font-family:'JetBrains Mono',monospace; margin-top:0.5rem;">
+        ● Available for work &nbsp;·&nbsp; UTC+6 &nbsp;·&nbsp; Remote preferred
+      </p>
+    </div>
+
+    <div class="contact-form reveal">
+      <div class="field">
+        <label>Name</label>
+        <input type="text" placeholder="Ada Lovelace">
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input type="email" placeholder="ada@example.com">
+      </div>
+      <div class="field">
+        <label>Subject</label>
+        <input type="text" placeholder="Job opportunity / Freelance / Just saying hi">
+      </div>
+      <div class="field">
+        <label>Message</label>
+        <textarea rows="5" placeholder="Tell me about your project, timeline, and budget if applicable..."></textarea>
+      </div>
+      <button class="btn-primary" style="align-self:flex-start;" onclick="handleSend(this)">Send message</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>durjoy@das:~$ <span style="color:var(--green)">©2026</span></span>
+  <span>Designed & built by Durjoy Das</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
