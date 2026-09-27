@@ -108,13 +108,66 @@
 })();
 
 /* ── CONTACT SEND ── */
-function handleSend(btn) {
+const GOOGLE_SCRIPT_URL =
+  'https://script.google.com/macros/s/AKfycbzJEL5_6SYYDY73C9gzw_rJSdp7P_ASplnJ-UoW4U0JnQMRbByn59vkafoPRUl41hBO/exec';
+
+async function handleSend(btn) {
+  const form = document.getElementById('contactForm');
+
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const subject = document.getElementById('subject').value.trim();
+  const message = document.getElementById('message').value.trim();
+
+  // Honeypot field
+  const website = document.getElementById('website').value.trim();
+
+  // Block basic bots that fill the hidden field
+  if (website) {
+    console.log('Spam submission blocked.');
+    return;
+  }
+
+  // Basic validation
+  if (!name || !email || !subject || !message) {
+    alert('Please fill in all fields.');
+    return;
+  }
+
   btn.textContent = 'Sending...';
   btn.disabled = true;
-  setTimeout(() => {
+
+  const data = {
+    name: name,
+    email: email,
+    subject: subject,
+    message: message,
+    website: website
+  };
+
+  try {
+    await fetch(GOOGLE_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'text/plain;charset=utf-8'
+      },
+      body: JSON.stringify(data)
+    });
+
     btn.textContent = 'Sent ✓';
     btn.style.background = '#86EFAC';
-  }, 900);
+
+    form.querySelectorAll('input, textarea').forEach(field => {
+      field.value = '';
+    });
+
+  } catch (error) {
+    console.error('Form submission error:', error);
+
+    btn.textContent = 'Failed — try again';
+    btn.disabled = false;
+  }
 }
 
 /* ── MOBILE NAV ── */

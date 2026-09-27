@@ -495,24 +495,37 @@
       </p>
     </div>
 
-    <div class="contact-form reveal">
-      <div class="field">
-        <label>Name</label>
-        <input type="text" placeholder="Ada Lovelace">
+      <div class="contact-form reveal" id="contactForm">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Ada Lovelace" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="ada@example.com" required>
+        </div>
+        <div class="field">
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" type="text" placeholder="Job opportunity / Freelance / Just saying hi" required>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell me about your project, timeline, and budget if applicable..." required></textarea>
+        </div>
+
+          <!-- Honeypot: should remain empty for real users -->
+          <div class="field honeypot" aria-hidden="true">
+            <label for="website">Website</label>
+            <input
+              type="text"
+              id="website"
+              name="website"
+              tabindex="-1"
+              autocomplete="off">
+          </div>
+
+        <button type="button" class="btn-primary" style="align-self:flex-start;" onclick="handleSend(this)"> Send message </button>
       </div>
-      <div class="field">
-        <label>Email</label>
-        <input type="email" placeholder="ada@example.com">
-      </div>
-      <div class="field">
-        <label>Subject</label>
-        <input type="text" placeholder="Job opportunity / Freelance / Just saying hi">
-      </div>
-      <div class="field">
-        <label>Message</label>
-        <textarea rows="5" placeholder="Tell me about your project, timeline, and budget if applicable..."></textarea>
-      </div>
-      <button class="btn-primary" style="align-self:flex-start;" onclick="handleSend(this)">Send message</button>
     </div>
   </div>
 </section>
